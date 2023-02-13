@@ -8,3 +8,4 @@ program
     .version('0.0.1', '-V, --version', 'output the version number')
     .option('-f, --format <type>', 'output format')
     .parse()
+    .action((filepath1, filepath2) => {genDiff(filepath1, filepath2)})
