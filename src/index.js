@@ -20,18 +20,20 @@ const genDiff = (file1, file2) => {
   const result = sortCompare.reduce((acc, value) => {
     let action = acc;
     if (!Object.hasOwn(fString2, value)) {
-      action += `    - ${value}: ${fString1[value]}\n`;
+      action += `  - ${value}: ${fString1[value]}\n`;
     } else if (!Object.hasOwn(fString1, value)) {
-      action += `    + ${value}: ${fString2[value]}\n`;
+      action += `  + ${value}: ${fString2[value]}\n`;
     } else if (fString1[value] !== fString2[value]) {
-      action += `    - ${value}: ${fString1[value]}\n`;
-      action += `    + ${value}: ${fString2[value]}\n`;
+      action += `  - ${value}: ${fString1[value]}\n`;
+      action += `  + ${value}: ${fString2[value]}\n`;
     } else {
-      action += `      ${value}: ${fString1[value]}\n`;
+      action += `    ${value}: ${fString1[value]}\n`;
     }
     return action;
   }, '');
-  console.log(`{\n${result}  }`);
-  return `{\n${result}  }`;
+  console.log(`{\n${result}}`);
+  return `{\n${result}}`;
 };
+
 export default genDiff;
+
