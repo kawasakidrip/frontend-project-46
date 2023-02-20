@@ -2,7 +2,7 @@ gendiff:
 	node bin/gendiff.js
 git: 
 	git add .
-	git commit -m 'add lint and bages'
+	git commit -m 'add first test'
 	git push
 lint:
 	npx eslint .
