@@ -8,6 +8,7 @@ git:
 	git push
 lint:
 	npx eslint .
-
 fix:
 	npx eslint --fix .
+jest:
+	npx jest --coverage

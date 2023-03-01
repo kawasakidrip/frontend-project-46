@@ -1,33 +1,27 @@
-import fs from 'fs';
-import path from 'path';
 import _ from 'lodash';
-
-const getAbsolutePath = (file) => path.resolve(file);
+import getParse from './parse.js';
 
 const genDiff = (file1, file2) => {
-  const filePath1 = getAbsolutePath(file1);
-  const filePath2 = getAbsolutePath(file2);
+  const data1 = getParse(file1);
+  const data2 = getParse(file2);
 
-  const fString1 = JSON.parse(fs.readFileSync(filePath1));
-  const fString2 = JSON.parse(fs.readFileSync(filePath2));
-
-  const property1 = Object.keys(fString1);
-  const property2 = Object.keys(fString2);
+  const property1 = Object.keys(data1);
+  const property2 = Object.keys(data2);
 
   const compare = _.union(property1, property2);
   const sortCompare = compare.sort();
 
   const result = sortCompare.reduce((acc, value) => {
     let action = acc;
-    if (!Object.hasOwn(fString2, value)) {
-      action += `  - ${value}: ${fString1[value]}\n`;
-    } else if (!Object.hasOwn(fString1, value)) {
-      action += `  + ${value}: ${fString2[value]}\n`;
-    } else if (fString1[value] !== fString2[value]) {
-      action += `  - ${value}: ${fString1[value]}\n`;
-      action += `  + ${value}: ${fString2[value]}\n`;
+    if (!Object.hasOwn(data2, value)) {
+      action += `  - ${value}: ${data1[value]}\n`;
+    } else if (!Object.hasOwn(data1, value)) {
+      action += `  + ${value}: ${data2[value]}\n`;
+    } else if (data1[value] !== data2[value]) {
+      action += `  - ${value}: ${data1[value]}\n`;
+      action += `  + ${value}: ${data2[value]}\n`;
     } else {
-      action += `    ${value}: ${fString1[value]}\n`;
+      action += `    ${value}: ${data1[value]}\n`;
     }
     return action;
   }, '');
@@ -36,4 +30,3 @@ const genDiff = (file1, file2) => {
 };
 
 export default genDiff;
-
