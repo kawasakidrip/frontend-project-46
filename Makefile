@@ -4,7 +4,7 @@ gendiff:
 	node bin/gendiff.js
 git: 
 	git add .
-	git commit -m 'upd first jest'
+	git commit -m 'upd all project'
 	git push
 lint:
 	npx eslint .

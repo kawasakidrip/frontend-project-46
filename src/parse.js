@@ -6,19 +6,17 @@ const getAbsolutePath = (filename) => path.resolve(process.cwd(), filename);
 
 const getFileExtension = (filename) => path.extname(filename);
 
-const getJSONFromFile = (filePath) => {
+const getData = (filePath, extension) => {
   const absolutePath = getAbsolutePath(filePath);
-  const data = JSON.parse(fs.readFileSync(absolutePath));
-
-  return data;
+  if (extension === '.json') {
+    return JSON.parse(fs.readFileSync(absolutePath));
+  }
+  return yaml.load(fs.readFileSync(absolutePath));
 };
 
-const getYamlFromFile = (filePath) => {
-  const absolutePath = getAbsolutePath(filePath);
-  const data = yaml.load(fs.readFileSync(absolutePath));
+const getJSONFromFile = (filePath) => getData(filePath);
 
-  return data;
-};
+const getYamlFromFile = (filePath) => getData(filePath);
 
 const getParse = (filename) => {
   const extension = getFileExtension(filename);

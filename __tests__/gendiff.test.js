@@ -1,23 +1,26 @@
 #!/usr/bin/env node
 import { test, expect } from '@jest/globals';
 import { fileURLToPath } from 'url';
-import path from 'path';
+import path, { dirname } from 'path';
 import fs from 'fs';
 import genDiff from '../src/index';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const fileName = fileURLToPath(import.meta.url);
+const dirName = dirname(fileName);
 
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const getFixturePath = (filename) => path.join(dirName, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-const filePath1 = getFixturePath('file1.yml');
-const filePath2 = getFixturePath('file2.yml');
-
 test('gendiff tests', () => {
-  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toEqual(readFile('expected_file.txt'));
+  const filePath1 = getFixturePath('file1.json');
+  const filePath2 = getFixturePath('file2.json');
+  const expectFile = readFile('expected_file.txt');
+  expect(genDiff(filePath1, filePath2)).toEqual(expectFile);
 });
 
 test('gendiff tests yml', () => {
-  expect(genDiff(filePath1, filePath2)).toEqual(readFile('expected_file_yml.txt'));
+  const filePath1 = getFixturePath('file1.yml');
+  const filePath2 = getFixturePath('file2.yml');
+  const expectFile = readFile('expected_file_yml.txt');
+  expect(genDiff(filePath1, filePath2)).toEqual(expectFile);
 });
