@@ -24,3 +24,17 @@ test('gendiff tests yml', () => {
   const expectFile = readFile('expected_file_yml.txt');
   expect(genDiff(filePath1, filePath2)).toEqual(expectFile);
 });
+
+test('gendiff tests nested', () => {
+  const filePath1 = getFixturePath('file1nested.json');
+  const filePath2 = getFixturePath('file2nested.json');
+  const expectFile = readFile('expected_file_nested.txt');
+  expect(genDiff(filePath1, filePath2)).toEqual(expectFile);
+});
+
+test('gendiff tests nested yml', () => {
+  const filePath1 = getFixturePath('file1nested.yml');
+  const filePath2 = getFixturePath('file2nested.yml');
+  const expectFile = readFile('expected_file_nested_yml.txt');
+  expect(genDiff(filePath1, filePath2)).toEqual(expectFile);
+});
