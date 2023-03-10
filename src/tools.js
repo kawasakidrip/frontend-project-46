@@ -37,7 +37,7 @@ const getTree = (data1, data2) => {
     } if (data1[key] === data2[key]) {
       return ({ key, value: data1[key], status: 'unchanged' });
     }
-    throw new Error('Something went wrong.. Try again!');
+    return new Error('Something went wrong.. Try again!');
   });
   return result;
 };

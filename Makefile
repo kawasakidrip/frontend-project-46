@@ -4,7 +4,7 @@ gendiff:
 	node bin/gendiff.js
 git: 
 	git add .
-	git commit -m 'upd all project2'
+	git commit -m 'upd all project3'
 	git push
 lint:
 	npx eslint .
