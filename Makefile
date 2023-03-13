@@ -4,7 +4,7 @@ gendiff:
 	node bin/gendiff.js
 git: 
 	git add .
-	git commit -m 'pass tests with nesteds file'
+	git commit -m 'zxc'
 	git push
 lint:
 	npx eslint .

@@ -1,4 +1,4 @@
-import { objectStingify } from '../tools';
+import { objectStingify } from '../tools.js';
 
 const labels = {
   deleted: '- ',
