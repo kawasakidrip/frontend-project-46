@@ -5,7 +5,7 @@ const getCompare = (data1, data2) => {
   const property2 = Object.keys(data2);
 
   const compare = _.union(property1, property2);
-  return compare.sort();
+  return _.sortBy(compare);
 };
 
 const objectStingify = (value, depth) => {
