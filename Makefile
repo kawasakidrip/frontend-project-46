@@ -4,7 +4,7 @@ gendiff:
 	node bin/gendiff.js
 git: 
 	git add .
-	git commit -m 'final stage5'
+	git commit -m 'final stage6'
 	git push
 lint:
 	npx eslint .
