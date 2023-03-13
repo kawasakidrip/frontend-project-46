@@ -1,8 +1,8 @@
 {
-  "name": "zxc",
+  "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/kawasakidrip/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/kawasakidrip/frontend-project-46/actions)",
-  "main": "gendiff.js",
+  "main": "src/diff.js",
   "scripts": {
     "test": "jest"
   },
