@@ -25,4 +25,4 @@ Command `gendiff -h` outputs all options of this utility
       -h, --help           display help for command
 
 ## with simple files
-https://asciinema.org/a/f1032XJvnmjiYu44piFaJ8RHA
+[![asciicast](https://asciinema.org/a/f1032XJvnmjiYu44piFaJ8RHA.svg)](https://asciinema.org/a/f1032XJvnmjiYu44piFaJ8RHA)
