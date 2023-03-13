@@ -16,7 +16,6 @@ const stylish = (tree, spacesCount = 4, replacer = ' ') => {
     const bracketIndent = replacer.repeat(indentSize - spacesCount);
 
     const lines = el.map(({ key, value, status }) => {
-      
       if (status === 'nested') {
         return `${indent}${labels.nested}${key}: ${iter(value, depth + 1)}`;
       } if (status === 'deleted') {
