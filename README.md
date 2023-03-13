@@ -10,8 +10,8 @@ Gendiff is a utility compares two configuration files and shows a difference.
 2. Write on console `make install`
 ## Options
 Command `gendiff -h` outputs all options of this utility
-
- Usage: gendiff [options] <filepath1> <filepath2>
+    
+    Usage: gendiff [options] <filepath1> <filepath2>
 
     Compares two configuration files and shows a difference.
 
