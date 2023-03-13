@@ -24,5 +24,9 @@ Command `gendiff -h` outputs all options of this utility
       -f, --format <type>  output format (default: "stylish")
       -h, --help           display help for command
 
-## with simple files
+## With simple files
 [![asciicast](https://asciinema.org/a/f1032XJvnmjiYu44piFaJ8RHA.svg)](https://asciinema.org/a/f1032XJvnmjiYu44piFaJ8RHA)
+## Plain
+[![asciicast](https://asciinema.org/a/4CN751RRreu4qcFZNqPjSwSrB.svg)](https://asciinema.org/a/4CN751RRreu4qcFZNqPjSwSrB)
+## JSON
+[![asciicast](https://asciinema.org/a/QD6g474EkPZRT5WYZyYo1tToe.svg)](https://asciinema.org/a/QD6g474EkPZRT5WYZyYo1tToe)
