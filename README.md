@@ -23,3 +23,6 @@ Command `gendiff -h` outputs all options of this utility
       -V, --version        output the version number
       -f, --format <type>  output format (default: "stylish")
       -h, --help           display help for command
+
+## with simple files
+https://asciinema.org/a/f1032XJvnmjiYu44piFaJ8RHA

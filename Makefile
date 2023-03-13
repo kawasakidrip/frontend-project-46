@@ -4,7 +4,7 @@ gendiff:
 	node bin/gendiff.js
 git: 
 	git add .
-	git commit -m 'zxc2'
+	git commit -m 'zxc3'
 	git push
 lint:
 	npx eslint .
