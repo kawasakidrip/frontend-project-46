@@ -7,4 +7,4 @@
 Gendiff is a utility compares two configuration files and shows a difference.
 ## How to used
 1. Clone my rep
-2. Write on console <make install >
+2. Write on console `make install`
